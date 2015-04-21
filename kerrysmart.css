@@ -1,0 +1,48 @@
+body {
+	text-align: center;
+	padding-bottom: 5em;
+}
+
+.container {
+	margin: 0 0;
+}
+
+#title-img {
+	margin-bottom: 2em;
+}
+
+/*-------------main categories-------------*/
+
+.category {
+	height: 20em;
+	background-size: cover;
+	border: 2px solid black;
+	margin: auto 2em;
+	border-radius: 3%;
+}
+
+.category h2 {
+	color: #D0DEF7;
+
+}
+
+#knitting {
+	background-image: url("knittingSQ-BW.JPG");
+}
+#knitting:hover {
+	background-image: url("knittingSQ.JPG");
+}
+
+#illustration {
+	background-image: url("mushroomsBW.jpg");
+}
+#illustration:hover {
+	background-image: url("mushrooms.jpg");
+}
+
+#contact {
+	background-image: url("lettersBW.jpg");
+}
+#contact:hover {
+	background-image: url("letters.jpg");
+}
