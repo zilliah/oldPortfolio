@@ -1,48 +1,131 @@
+/*colours:
+dark teal: #02595F rgba(2,89,95,1)
+mid blue: #7EADFF
+lt blue: #D0DEF7
+hilight blue: #BDD5FF
+*/
+
+
 body {
-	text-align: center;
-	padding-bottom: 5em;
 }
 
 .container {
 	margin: 0 0;
 }
 
-#title-img {
+a, a:hover, a:active, a:visited, a:link {
+	text-decoration: none;
+}
+
+
+body:after{
+    display:none;
+    content: url("img/knitting2.JPG") url("img/sketchbook.jpg") url("img/letters.jpg");
+}  /* preload hover/click images */
+
+img {
 	margin-bottom: 2em;
 }
 
-/*-------------main categories-------------*/
+aside {
+	text-align: right;
+	font-size: 1.4em;
+	padding: 1.5em 1.5em 0em;
+	color: #7EADFF;
+}
 
+.glyphicon {
+	color: #02595F;
+}
+
+/*-------------category sections-------------*/
+
+
+/*-----------for the way it was before----------
 .category {
 	height: 20em;
 	background-size: cover;
 	border: 2px solid black;
-	margin: auto 2em;
+	margin: 2em;
 	border-radius: 3%;
+	box-shadow: 0px 10px 25px -6px #02595F;
+}
+
+.category:hover {
+	box-shadow: 0px 10px 25px -6px #7EADFF;
+}
+
+.category:active {
+	box-shadow: inset 0px -10px 25px -6px #7EADFF;
 }
 
 .category h2 {
 	color: #D0DEF7;
-
 }
+----------------which isn't a thing anymore I guess------*/
+
+h2 {
+	color: #D0DEF7;
+	font-size: 3em;
+	padding-top: 1em;
+}
+
+.category {
+	height: 20em;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	margin: 0px auto;
+	background-color: #02595F;
+}
+
+.category ul {
+	color: #D0DEF7;
+}
+
+
+
+
+/* urg worry about pictures later mmmk
+#dev:hover, #dev:active {
+	background-image: url("");
+}
+
+#dev {
+	background-image: url("");
+}
+
+
 
 #knitting {
-	background-image: url("knittingSQ-BW.JPG");
+	/* -----this bit doesn't work, need to do gradient tutorials
+	background: #02595F;
+	background-image: url("img/knitting2BW.JPG"); /* fallback 
+	background-image: url("img/knitting2BW.JPG"), -webkit-gradient(linear, left top, left bottom, from(#02595F), to(rgba(2,89,95,0))); /* Saf4+, Chrome 
+	background-image: url("img/knitting2BW.JPG"), -webkit-linear-gradient(left, #02595F, rgba(2,89,95,0)); /* Chrome 10+, Saf5.1+ 
+	background-image: url("img/knitting2BW.JPG"),    -moz-linear-gradient(right, #02595F, rgba(2,89,95,0)); /* FF3.6+ 
+	background-image: url("img/knitting2BW.JPG"),      -o-linear-gradient(right, #02595F, rgba(2,89,95,0)); /* Opera 11.10+ 
+	background-image: url("img/knitting2BW.JPG"),         linear-gradient(to right, #02595F, rgba(2,89,95,0)); /* W3C 
+	
+	background-image: url("img/knittingBW.JPG");
+
 }
-#knitting:hover {
-	background-image: url("knittingSQ.JPG");
+#knitting:hover, #knitting:active {
+	background-image: url("img/knitting.JPG");
 }
 
-#illustration {
-	background-image: url("mushroomsBW.jpg");
+#sketchbook {
+	background-image: url("img/sketchbookCRBW.jpg");
 }
-#illustration:hover {
-	background-image: url("mushrooms.jpg");
+
+#sketchbook:hover, #sketchbook:active {
+	background-image: url("img/sketchbookCR.jpg");
 }
 
 #contact {
-	background-image: url("lettersBW.jpg");
+	background-image: url("img/lettersBW.jpg");
 }
-#contact:hover {
-	background-image: url("letters.jpg");
+#contact:hover, #contact:active {
+	background-image: url("img/letters.jpg");
 }
+
+/*

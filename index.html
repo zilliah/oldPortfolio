@@ -9,37 +9,88 @@
     <link href="kerrysmart.css" rel="stylesheet">
     <script type="text/javascript" src="bootstrap/js/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="kerrysmart.js"></script>
 </head>
 
 
 <body>
 <div class="container-fluid">
+	
+	<div id="name-container">
+		<div class="row">
+			<img src="name.png" class="img-responsive col-md-8 col-sm-12">
+
+			<aside class="col-md-3 col-md-offset-1 hidden-xs hidden-sm" role="navigation">
+					<ul class="nav nav-pills nav-stacked">
+						<li class="no-go" id="nav-dev"><a href="#dev">Front End Development <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a></li>
+						<li class="no-go" id="nav-knit"><a href="#knitting">Knitting <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a></li>
+						<li class="" id="nav-sketch"><a href="http://sketchbook.kerrysmart.ca/" target="_blank">Sketchbook <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a></li>
+						<li class="" id="nav-contact"><a href="#contact">Contact <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a></li>
+					</ul>
+			</aside>
+		</div>
+	</div>
+
+
 	<div class="row">
-		<img src="name.png" class="col-md-8 col-md-offset-2" id="title-img">
+		<section class="category col-md-12 col-md-offset-1" id="dev">
+			<h2>Front End Development</h2>
+			<ul class="nav nav-pills">
+				<li><a href="">Projects</a></li>
+				<li><a href="https://github.com/zilliah" target="blank">Github</a></li>
+				<li><a href="">Skills</a></li>
+				<li><a href="">Resume</a></li>
+			</ul>
+		</section>
+	</div>
+
+
+	<div class="row">
+		<section class="category" id="knitting">
+			<h2>Knitting</h2>
+			<ul class="nav nav-pills">
+				<li><a href="">Patterns</a></li>
+				<li><a href="">Teaching</a></li>
+				<li><a href="">Commission</a></li>
+				<li><a href="">Projects</a></li>
+			</ul>
+		</section>
+	</div>
+
+	<div class="row">
+		<a href="http://sketchbook.kerrysmart.ca/" target="_blank"><section class="category" id="sketchbook">
+			<h2>Sketchbook</h2>
+		</section></a>
 	</div>
 
 
 
-	<div class="row">
-		<div class="col-md-2 col-md-offset-1 category" id="design">
-			<h2>Design</h2>
+
+	<!--  I don't have enough relevant things for this section yet, maybe put back in future iterations
+		<div class="category" id="design">
+			<h2>Visual Design</h2>
 			<p>eugh i don't even know, what should i put here???</p>
 		</div>
-		<div class="col-md-2 category" id="web-dev">
-			<h2>Web Dev</h2>
-			<p>or coding or whatever, idk</p>
-		</div>
-		<div class="col-md-2 category" id="knitting">
-			<h2>Knitting</h2>
-		</div>
-		<div class="col-md-2 category" id="illustration">
-			<h2>Illustration</h2>
-		</div>
-		<div class="col-md-2 category" id="contact">
+	-->
+
+	<!-- also have a section for music eventually?  or have everything as "other projects"? -->
+			
+	<div class="row">
+		<section class="category" id="contact">
 			<h2>Contact</h2>
-		</div>
+			<ul class="nav nav-pills">
+				<li><a href="">email</a></li>
+				<li id="contact-form"><a href="">contact form</a></li>
+				<li><a href="">tumblr</a></li>
+				<li><a href="">twitter</a></li>
+				<li><a href="">linkedin i guess?</a></li>
+			</ul>
+		</section>
 	</div>
 </div>
+
+
+
 
 </body>
 </html>
