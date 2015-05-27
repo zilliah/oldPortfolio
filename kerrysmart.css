@@ -18,6 +18,7 @@ a, a:hover, a:active, a:visited, a:link {
 }
 
 
+
 body:after{
     display:none;
     content: url("img/knitting2.JPG") url("img/sketchbook.jpg") url("img/letters.jpg");
@@ -29,7 +30,7 @@ img {
 
 aside {
 	text-align: right;
-	font-size: 1.4em;
+	font-size: 1.3em;
 	padding: 1.5em 1.5em 0em;
 	color: #7EADFF;
 }
@@ -38,48 +39,45 @@ aside {
 	color: #02595F;
 }
 
-/*-------------category sections-------------*/
-
-
-/*-----------for the way it was before----------
-.category {
-	height: 20em;
-	background-size: cover;
-	border: 2px solid black;
-	margin: 2em;
-	border-radius: 3%;
-	box-shadow: 0px 10px 25px -6px #02595F;
-}
-
-.category:hover {
-	box-shadow: 0px 10px 25px -6px #7EADFF;
-}
-
-.category:active {
-	box-shadow: inset 0px -10px 25px -6px #7EADFF;
-}
-
-.category h2 {
-	color: #D0DEF7;
-}
-----------------which isn't a thing anymore I guess------*/
-
 h2 {
 	color: #D0DEF7;
 	font-size: 3em;
-	padding-top: 1em;
+	padding-top: 0.7em;
+	padding-left: 0.7em;
 }
 
 .category {
-	height: 20em;
 	background-repeat: no-repeat;
 	background-size: 100%;
 	margin: 0px auto;
 	background-color: #02595F;
+	padding-bottom: 3em;
 }
 
 .category ul {
 	color: #D0DEF7;
+	margin-left: 2.1em;
+}
+
+
+
+/* -------------- inside sections -------- */
+.nav-pills li a {
+	color: #7EADFF;
+	font-size: 1.1em;
+}
+
+.nav-pills li a:hover, .nav-pills li a:focus, .nav-pills li a:active {
+	background-color: #D0DEF7;
+	color: #02595F;
+}
+
+
+
+/* ---------------- details ------------------- */
+
+.detail {
+	
 }
 
 

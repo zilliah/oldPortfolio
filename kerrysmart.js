@@ -13,16 +13,21 @@ $(document).ready(function() {
 		}, 600);
 	});
 
+	$("#nav-other").click( function() {
+		$("html,body").animate({
+			scrollTop: $("#other").offset().top
+		}, 600);
+	});
+
 	$("#nav-contact").click( function() {
 		$("html,body").animate({
 			scrollTop: $("#contact").offset().top
 		}, 600);
 	});
 
-
 	//contact form
 	$("#contact-form").click( function() {
-		
+
 	});
 
 
