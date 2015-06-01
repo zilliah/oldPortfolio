@@ -7,6 +7,12 @@ $(document).ready(function() {
 		}, 600);
 	});
 
+	$("#nav-visual").click( function() {
+		$("html,body").animate({
+			scrollTop: $("#visual").offset().top
+		}, 600);
+	});
+
 	$("#nav-knit").click( function() {
 		$("html,body").animate({
 			scrollTop: $("#knitting").offset().top
@@ -25,10 +31,22 @@ $(document).ready(function() {
 		}, 600);
 	});
 
-	//contact form
-	$("#contact-form").click( function() {
 
+	//hide/show
+	var isShown = false;
+	$("#things").click( function() {
+		if (!isShown) {
+			console.log("nothing yet, putting it in");
+			$(".detail").css("display","inline");
+			isShown = true;
+		} else {
+			console.log("hide it again");
+			$(".detail").css("display","none");
+			isShown = false;
+		}
 	});
+
+
 
 
 });

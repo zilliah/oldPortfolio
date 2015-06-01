@@ -16,81 +16,256 @@
 <body>
 <div class="container-fluid">
 	
-	<div id="name-container">
-		<div class="row">
-			<img src="name.png" class="img-responsive col-md-8 col-sm-12">
+	<div class="row" id="name-container">
+		<img src="name.png" alt="Kerry Smart" class="img-responsive col-md-8 col-sm-12">
 
-			<aside class="col-md-3 col-md-offset-1 hidden-xs hidden-sm" role="navigation">
-					<ul class="nav nav-pills nav-stacked">
-						<li class="no-go" id="nav-dev"><a href="#dev">front end development <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a></li>
-						<li class="no-go" id="nav-knit"><a href="#knitting">knitting <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a></li>
-						<li class="" id="nav-sketch"><a href="http://sketchbook.kerrysmart.ca/" target="_blank">sketchbook <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a></li>
-						<li class="" id="nav-other"><a href="#other">other projects <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a></li>
-						<li class="" id="nav-contact"><a href="#contact">contact <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a></li>
+<!-- ..................NAV.............. -->
+		<nav class="col-md-3 col-md-offset-1 hidden-xs hidden-sm">
+				<ul class="nav nav-pills nav-stacked">
+					<li class="no-go" id="nav-dev"><a href="#dev">front end development <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a></li>
+					<li class="" id="nav-visual"><a href="#visual" >visual art and design <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a></li>
+					<li class="no-go" id="nav-knit"><a href="#knitting">knitting <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a></li>
+					<li class="" id="nav-other"><a href="#other">other projects <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a></li>
+					<li class="" id="nav-contact"><a href="#contact">contact <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a></li>
+				</ul>
+		</nav>
+	</div>
+
+
+<!-- ..................FRONT END.................... -->
+	<div class="category">
+		<section id="dev">
+			<div class="row">
+				<div class="col-md-6">
+					<h1>front end development</h1>
+					<ul class="nav nav-pills">
+						<li><a href="#">projects</a></li>
+						<li><a href="#">skills</a></li>
+						<li><a href="https://github.com/zilliah" target="blank">github</a></li>
+						<li><a href="resume/dev-resume.pdf">resume</a></li>
 					</ul>
-			</aside>
-		</div>
-	</div>
 
 
-	<div class="row">
-		<section class="category" id="dev">
-			<h2>front end development</h2>
-			<ul class="nav nav-pills">
-				<li><a href="">projects</a></li>
-				<li><a href="https://github.com/zilliah" target="blank">github</a></li>
-				<li><a href="">skills</a></li>
-				<li><a href="resume/dev-resume.pdf">resume</a></li>
-			</ul>
+						<div class="detail">
+							<div class="col-md-6">
+								<ul class="fed" id="fed-projects">
+									<li><a href="#here-is-pretty">Here is Pretty</a></li>
+									<li><a href="#ki-checker">KI-Checker</a></li>
+									<!-- <li><a href="#bagelly">Bagelly</a></li> -->
+								</ul>
+
+								<ul class="fed" id="fed-skills">
+									<li><a href="#">HTML/CSS</a></li>
+									<li><a href="#">Javascript/jQuery</a></li>
+									<li><a href="#">Git</a></li>
+									<li><a href="#">Python (familiar)</a></li>
+									<li><a href="#">Latex</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+						
+					<div class="expn col-md-6">
+						<div class="fed-proj-expn" id="here-is-pretty">
+							<h3><a href="http://hereispretty.com" target="blank">Here is Pretty</a></h3>
+							<p>A webapp which lets you find and track pretty places.  Currently in developement. <a href="https://github.com/zilliah/hereispretty">On Github.</a></p>
+							<div class="row">
+								<div class="col-xs-10 col-xs-offset-1">
+									<a href="http://hereispretty.com/" class="img-link" title="Here is Pretty" target="blank"><img src="img/HiP-screen.png" alt="here is pretty screenshot" class="img-responsive"></a>
+								</div>
+							</div>
+						</div>
+						<div class="fed-proj-expn" id="ki-checker">
+							<h3><a href="http://kerrysmart.ca/ki-checker/" title="KI Requirements Checker" target="blank">KI-Checker</a></h3>
+							<p>Calculates the remaining courses you have to take to graduate from Knowledge Integration at the University of Waterloo (based on the 2014-2015 undergrad calendar).</p>
+								<div class="row">
+								<div class="col-xs-10 col-xs-offset-1">
+									<a href="http://kerrysmart.ca/ki-checker/" class="img-link" title="KI Requirements Checker" target="blank"><img src="img/KI-screen.png" alt="KI screenshot" class="img-responsive"></a>
+								</div>
+							</div>
+							
+						</div>
+						<!-- <div class="fed-proj-expn" id="bagelly">bagelly</div> -->
+					</div>
+				</div>
+
 		</section>
 	</div>
 
 
-	<div class="row">
-		<section class="category" id="knitting">
-			<h2>knitting</h2>
-			<ul class="nav nav-pills">
-				<li><a href="">patterns</a></li>
-				<li><a href="">teaching</a></li>
-				<li><a href="">commission</a></li>
-				<li><a href="http://www.ravelry.com/people/zilliah" target="blank">ravelry</a></li>
-			</ul>
+<!-- ................VISUAL.................... -->
+	<div class="category">
+		<section id="visual">
+			<div class="row">
+				<div class="col-md-6">
+					<h1>visual art and design</h1>
+					<ul class="nav nav-pills">
+						<li><a href="">projects</a></li>
+						<li><a href="http://sketchbook.kerrysmart.ca/" target="_blank">sketchbook</a></li>
+						<li><a href="">skills</a></li>
+					</ul>
+
+					<div class="detail">
+
+						<ul class="vis" id="vis-projects">
+							<li><a href="">Flooded! museum exhibit</a></li>
+							<li><a href="">Knit On/Off</a></li>
+							<!-- <li><a href="">Logos</a></li> -->
+						</ul>
+
+
+						<ul class="vis" id="vis-skills">
+							<li>drawing</li>
+							<li>something else here probably idk</li>
+							<li>Photoshop/Krita/GIMP</li>
+							<li>Inkscape</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="expn col-md-6">
+					<div class="vis" id="flooded">
+						<h3><a href="flooded">Flooded! museum exhibit</a></h3>
+						<p>A museum exhibtion about floods.  Third-year project, done in a group of six.  I did visual design.</p>
+						<a href="flooded" class="img-link" ><img src="" alt="flooded museum exhibit"></a>
+					</div>
+
+					<div class="vis" id="knit-onoff	">
+						<h3><a href="knit-onoff">Knit On/Off</a></h3>
+						<p>Thesis project, a machine which knits and un-knits a piece of fabric.  In progress.</p>
+						<a href="knit-onoff" class="img-link" ><img scr="" alt="knit on/off"></a>
+					</div>
+					<!-- <div class="vis" id="logos">Logos</div> -->
+				</div>
+			</div>
 		</section>
 	</div>
 
-	<div class="row">
-		<a href="http://sketchbook.kerrysmart.ca/" target="_blank"><section class="category" id="sketchbook">
-			<h2>sketchbook</h2>
-		</section></a>
+<!-- ............KNITTING.............. -->
+	<div class="category">
+		<section id="knitting">
+			<div class="row">
+				<div class="col-md-6">
+					<h1>knitting</h1>
+					<ul class="nav nav-pills">
+						<li><a href="">patterns</a></li>
+						<li><a href="">teaching</a></li>
+						<li><a href="">commission</a></li>
+						<li><a href="http://www.ravelry.com/people/zilliah" target="blank">ravelry</a></li>
+					</ul>
+
+					<div class="detail" id="knit">
+						<ul class="knit" id="knit-patterns">
+							<li><a href="http://www.ravelry.com/patterns/library/dryad-armwarmers" title="Dryad Armwarmers pattern">Dryad Armwarmers</a></li>
+							<li><a href="http://www.ravelry.com/patterns/library/very-large-red-hat" title="Very Large Red Hat pattern">Very Large Red Hat</a></li>
+							<li><a href="http://www.ravelry.com/patterns/library/eyelet-ribbed-dread-tam" title="Eyelet ribbed dread tam pattern">Eyelet Ribbed Dread Tam</a></li>
+							<li>Diamonds Shawl (coming soon)</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="expn knit">
+
+						<div class="knit pattern" id="dryad">
+							<h3><a href="http://www.ravelry.com/patterns/library/dryad-armwarmers" title="Dryad Armwarmers">Dryad Armwarmers</a></h3>
+							<p>Armwarmers with points and a leaf pattern, perfect for the wood elf in your life.</p>
+							<a href="http://www.ravelry.com/patterns/library/dryad-armwarmers" class="img-link"  title="Dryad Armwarmers"><img src="" alt="dryad armwarmers pattern"></a>
+						</div>
+						<div class="knit pattern" id="very-large">
+							<h3><a href="http://www.ravelry.com/patterns/library/very-large-red-hat" title="Very Large Red Hat">Very Large Red Hat</a></h3>
+							<p>An extremely large hat, intended for people with massive heads or massive hair.  Has cable detail.</p>
+							<a href="http://www.ravelry.com/patterns/library/very-large-red-hat" class="img-link"  title="Very Large Red Hat"><img src="" alt="very large red hat pattern"></a>
+						</div>
+						<div class="knit pattern" id="eyelet">
+							<h3><a href="http://www.ravelry.com/patterns/library/eyelet-ribbed-dread-tam"  title="Eyelet ribbed dread tam">Eyelet Dread Tam</a></h3>
+							<p>A large hat, perfect for dreadlocks, large heads, or when you just want a super slouchy hat. It’s reversible too.  Looks great in self-striping yarns.</p>
+							<a href="http://www.ravelry.com/patterns/library/eyelet-ribbed-dread-tam" class="img-link"  title="Eyelet ribbed dread tam"><img src="" alt="eyelet dread tam pattern"></a>
+						</div>
+
+
+
+
+
+						<p class="knit" id="knit-teach">I teach beginner knitting at <a href="http://shallweknit.ca/" title="Shall We Knit?">Shall We Knit?</a> in Waterloo, ON.  I am available for private or group lessons, which can be booked by <a href="kerrysmart.ca/index.html#contact">contacting me</a> or through Shall We Knit?  I'm happy to help you work through projects and I can teach the following skills:</p>
+							<ul>
+								<li>the knit and purl stitches (english and continental style)</li>
+								<li>casting on and binding off</li>
+								<li>fixing mistakes</li>
+								<li>what is gauge, why it's important, how to get it</li>
+								<li>increases and decreases</li>
+								<li>choosing and reading a pattern</li>
+								<li>various methods for working in the round</li>
+								<li>cables</li>
+								<li>lace</li>
+								<li>beads in knitting</li>
+								<li>interested in something else?  <a href="#contact">just ask!</a></li>
+							</ul>
+
+						<p class="knit" id="knit-commis">I am available to knit on commission; I can work from a pattern or design something for you.  I charge an hourly fee plus materials.  <a href="#contact">Contact me</a> to get an estimation for your project.</p>
+					</div>
+
+
+
+				</div>
+			</div>
+		</section>
 	</div>
 
-	<div class="row">
-		<section class="category" id="other">
-			<h2>other projects</h2>
-			<ul class="nav nav-pills">
-				<li><a href="">Flooded! museum exhibit</a></li>
-				<li><a href="">Knit On/Off</a></li>
-				<li><a href="https://soundcloud.com/zilliah-1" target="blank">ukulele songs</a></li>
-			</ul>
+<!-- ..............OTHER................ -->
+	<div class="category">
+		<section id="other">
+			<div class="row">
+
+				<h1>other projects</h1>
+				<ul class="nav nav-pills">
+					<li><a href="">textile work</a></li>
+					<li><a href="https://soundcloud.com/zilliah-1" target="blank">ukulele songs</a></li>
+					<li><a href="">tutorials</a></li>
+				</ul>
+
+				<div class="detail">
+					<ul class="other" id="other-textile">
+						<li><a href="https://www.flickr.com/photos/zilliah/sets/72157623503992887" target="blank">spinning and dying</a></li>
+						<li><a href="https://www.flickr.com/photos/zilliah/sets/72157629513633999" target="blank">embroidery</a></li>
+						<!-- <li><a href="">sewing</a></li> -->
+						<li><a href="https://www.flickr.com/photos/zilliah/sets/72157622670033469" target="blank">yarn bombing</a></li>
+					</ul>
+
+					<ul class="other" id="other-tutorials">
+						<li><a href="https://www.flickr.com/photos/zilliah/sets/72157624542941597" target="blank">how to re-make yarn</a></li>
+						<li><a href="https://www.flickr.com/photos/zilliah/sets/72157623359095855" target="blank">3D kandi</a></li>
+					</ul>
+				</div>
+			</div>
 		</section>
 	</div>
 			
-	<div class="row">
-		<section class="category" id="contact">
-			<h2>contact</h2>
-			<ul class="nav nav-pills">
-				<li><a href="">email</a></li>
-				<li id="contact-form"><a href="">contact form</a></li>
-				<li><a href="http://zilby.tumblr.com/" target="blank">tumblr</a></li>
-				<li><a href="https://twitter.com/zilliahbailey" target="blank">twitter</a></li>
-				<li><a href="https://ca.linkedin.com/pub/kerry-smart/8/632/735" target="blank">linkedin</a></li>
-			</ul>
+
+<!-- ............CONTACT............. -->
+	<div class="category">
+		<section id="contact">
+			<div class="row">
+				<h1>contact</h1>
+				<ul class="nav nav-pills">
+					<li id="things"><a href="#contact">email</a></li>
+					<!-- <li id="contact-form"><a href="">contact form</a></li> -->
+					<li><a href="http://sketchbook.kerrysmart.ca" target="blank">tumblr</a></li>
+					<li><a href="https://twitter.com/zilliahbailey" target="blank">twitter</a></li>
+					<li><a href="https://ca.linkedin.com/pub/kerry-smart/8/632/735" target="blank">linkedin</a></li>
+					<li><a href="http://www.ravelry.com/people/zilliah" target="blank">ravelry</a></li>
+				</ul>
+
+				<div class="detail">
+					<ul class="contact" id="email">
+						<li><a href="mailto:kerry@kerrysmart.ca">kerry@kerrysmart.ca</a></li>
+						<li><a href="mailto:kerry.z.smart@gmail.com">kerry.z.smart@gmail.com</a></li>
+					</ul>
+				</div>
+			</div>
 		</section>
 	</div>
 </div>
-
-
-
 
 </body>
 </html>
