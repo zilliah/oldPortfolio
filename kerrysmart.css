@@ -90,7 +90,7 @@ h3 a {
 /* ---------------- details ------------------- */
 
 .detail, .expn { 
-	/* display: none; */
+	display: none;
 }
 
 .expn h3 {
@@ -179,14 +179,3 @@ h3 a {
 
 /*
 
-/* ---- animations -------
-
-@keyframes appear {
-	from {display: none}
-	to {display: inline}
-}
-
-#email {
-	animation-name: appear;
-	animation-duration: 3s;
-}

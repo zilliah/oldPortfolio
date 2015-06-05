@@ -1,39 +1,19 @@
 $(document).ready(function() {
 
+	//scrolling from corner nav
 
-
-	//scrolling from nav elements
-	$("#nav-dev").click( function() {
+	$(".corner").click( function() {
+		event.preventDefault();
+		var sectionLink = event.target.href;
+		var sectionName = sectionLink.split("#");
+		sectionName = sectionName[1];
 		$("html,body").animate({
-			scrollTop: $("#dev").offset().top
+			scrollTop: $("#" + sectionName).offset().top
 		}, 600);
+
 	});
 
-	$("#nav-visual").click( function() {
-		$("html,body").animate({
-			scrollTop: $("#visual").offset().top
-		}, 600);
-	});
-
-	$("#nav-knit").click( function() {
-		$("html,body").animate({
-			scrollTop: $("#knitting").offset().top
-		}, 600);
-	});
-
-	$("#nav-other").click( function() {
-		$("html,body").animate({
-			scrollTop: $("#other").offset().top
-		}, 600);
-	});
-
-	$("#nav-contact").click( function() {
-		$("html,body").animate({
-			scrollTop: $("#contact").offset().top
-		}, 600);
-	});
-
-
+/*
 	//hide/show email
 	$("#things").click( function() {
 		$(".detail.contact").toggle(450);
@@ -41,39 +21,58 @@ $(document).ready(function() {
 			scrollTop: $("#contact").offset().top
 		}, 600);
 	});
-
-
-
-	//hide/show details when inner nav menu clicked
-	/*
-	$(".inner-nav li").click( function() {
-		console.log("inner nav clicked");
-		var thingClicked = event.target.id;
-		console.log(thingClicked + " clicked");
-
-		//mark as active tab
-
-		//close other open things
-		//in this section only?
-	});
 */
-	//open details
-	var openDetail = [];
-	var openExpn = [];
 
-	//example for other projects section
-	//IDs of target elemets to open are in href
-	$(".inner-nav li").click( function() {
+
+	//scroll to section when click on a section
+	$("section").click( function() {
+		currentSection = this.id;
+		//console.log("scrolling to: " + currentSection);
+		$("html,body").animate({
+			scrollTop: $("#" + currentSection).offset().top
+		}, 600);
+	});
+
+
+
+	//open details
+	var openDetail = ""; 
+	var openExpn = "";
+
+
+	//toggle contents of inner nav links
+	$(".inner-nav li").click( function(event) {
 		//$(event.target).addClass("active");
 		
-
-
+		//get id for clicked
 		var aimFull = event.target.href;
 		var aim = aimFull.split("#");
-		aim = aim[aim.length-1];
-		openDetail.push(aim);
+		//check if link is external
+		if (aim.length > 1) {
+			//stop page reloading
+			event.preventDefault();
+			aim = aim[aim.length-1];
+			console.log("aim: " + aim);
+			console.log("openDetail: " + openDetail);
+			//do nothing if openng the same one
+			if (aim == openDetail) {
+				$("#" + openDetail).toggle(450);
+				openDetail = "";
+				console.log("same thing");
+				return;
+			} else {
+				//close open detail
+				$("#" + openDetail).toggle(450);
+				$("#" + aim).toggle(450);
+				//list as open (without #)
+				openDetail = aim;
+			}
+		} else {
+			//close open detail
+			$("#" + openDetail).toggle(450);
+			openDetail = "";
+		}
 
-		$("#" + aim).toggle(450);
 	});
 });
 
