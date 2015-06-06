@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
 	//scrolling from corner nav
-
 	$(".corner").click( function() {
 		event.preventDefault();
 		var sectionLink = event.target.href;
@@ -13,17 +12,6 @@ $(document).ready(function() {
 
 	});
 
-/*
-	//hide/show email
-	$("#things").click( function() {
-		$(".detail.contact").toggle(450);
-		$("html,body").animate({
-			scrollTop: $("#contact").offset().top
-		}, 600);
-	});
-*/
-
-
 	//scroll to section when click on a section
 	$("section").click( function() {
 		currentSection = this.id;
@@ -34,16 +22,17 @@ $(document).ready(function() {
 	});
 
 
-
-	//open details
+	//toggle contents of inner nav links
 	var openDetail = ""; 
 	var openExpn = "";
-
-
-	//toggle contents of inner nav links
 	$(".inner-nav li").click( function(event) {
-		//$(event.target).addClass("active");
-		
+
+		//check if is link for expn
+		//currently	running twice for expns (bubbling)
+
+
+		console.log("it went");
+
 		//get id for clicked
 		var aimFull = event.target.href;
 		var aim = aimFull.split("#");
@@ -52,22 +41,21 @@ $(document).ready(function() {
 			//stop page reloading
 			event.preventDefault();
 			aim = aim[aim.length-1];
-			console.log("aim: " + aim);
-			console.log("openDetail: " + openDetail);
+			//console.log("aim: " + aim);
+			//console.log("openDetail: " + openDetail);
 			//do nothing if openng the same one
-			if (aim == openDetail) {
+			if (aim == openDetail) { //same thing clicked
 				$("#" + openDetail).toggle(450);
 				openDetail = "";
-				console.log("same thing");
 				return;
-			} else {
+			} else { //differnt thing
 				//close open detail
 				$("#" + openDetail).toggle(450);
 				$("#" + aim).toggle(450);
 				//list as open (without #)
 				openDetail = aim;
 			}
-		} else {
+		} else { //external link
 			//close open detail
 			$("#" + openDetail).toggle(450);
 			openDetail = "";
