@@ -9,7 +9,7 @@ $(document).ready(function() {
 		$("html,body").animate({
 			scrollTop: $("#" + sectionName).offset().top
 		}, 600);
-
+		console.log("scrolling to: " + sectionName);
 	});
 
 	//scroll to section when click on a section
@@ -19,6 +19,7 @@ $(document).ready(function() {
 		$("html,body").animate({
 			scrollTop: $("#" + currentSection).offset().top
 		}, 600);
+		console.log("scrolling to: " + currentSection);
 	});
 
 
@@ -26,12 +27,6 @@ $(document).ready(function() {
 	var openDetail = ""; 
 	var openExpn = "";
 	$(".inner-nav li").click( function(event) {
-
-		//check if is link for expn
-		//currently	running twice for expns (bubbling)
-
-
-		console.log("it went");
 
 		//get id for clicked
 		var aimFull = event.target.href;
@@ -59,6 +54,11 @@ $(document).ready(function() {
 			//close open detail
 			$("#" + openDetail).toggle(450);
 			openDetail = "";
+		}
+		
+		//stop event bubbling if it's inside a dropdown
+		if ($(event.target).hasClass("stop")) {
+			event.stopPropagation();
 		}
 
 	});
