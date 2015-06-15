@@ -12,6 +12,8 @@ $(document).ready(function() {
 		console.log("scrolling to: " + sectionName);
 	});
 
+
+	var currentSection = "";
 	//scroll to section when click on a section
 	$("section").click( function() {
 		currentSection = this.id;
@@ -62,5 +64,12 @@ $(document).ready(function() {
 		}
 
 	});
+
+	//rewrite toggle fxn to only collapse if click in the same section
+	//currentSection gives class of current section so there's that
+
+
+
+
 });
 
