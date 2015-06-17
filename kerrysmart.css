@@ -138,7 +138,7 @@ ul.down li {
 	padding: 0.2em;
 }
 
-.detail a:hover, .detail a:active,  
+li a.open, .detail a:hover, .detail a:active,  
 .expn a:hover, .expn a:active {
 	color: #02595F;
 	background-color: #D0DEF7;
