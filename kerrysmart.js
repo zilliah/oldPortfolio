@@ -74,71 +74,49 @@ $(document).ready(function() {
 	//object for tracking what's open
 	var open = {};
 	for (var i = 0; i<sectionIDs.length; i++) {
-		open[sectionIDs[i]] = []; //empty array unless something's open
+		open[sectionIDs[i]] = ""; 
 	}
-	console.log(open);
-	//open{ sectionName: [idclicked, href clicked]}
 
-	$(".inner-nav>li").click( function(event) {  //TODO if this selection works, get rid of .inner-nav, should only select top-level things
+	$(".inner-nav>li").click( function(event) {
+		//get sectionID
+		var containingSection = $(event.target).closest("section").attr("id");
 		
-		//if it's an external link, don't toggle anything 
-		//XXX or do i want external links to close open things in section?
-		//XXX for now, do nothing, i can make it something else if i feel like it
+		//if it's an external link, close open section things
 		if ($(event.target).attr("target") === "blank") {
-			console.log("external link");
+			dealWithOpen(containingSection);
+			open[containingSection] = "";
 			return;
 		}
 		//stop page reloading
 		event.preventDefault();
 
-		//get sectionID
-		var containingSection = $(event.target).closest("section").attr("id");
-/*		console.log("containting section: " + containingSection);*/
-
-		//mark nav as open
-		$(event.target).addClass("open");
-
 		//get ID of target
-		var targetID = event.target.id;
 		var targetHref = event.target.href;
 		targetHref = targetHref.split("#");
 		targetHref = targetHref[targetHref.length-1];
-		console.log("target ID: " + targetID);  
-		console.log("target href: " + targetHref);
 
-
-		//if something in this section's open already, close it and empty open
-		if (open[containingSection].length) {  
-			console.log("something was open already");
-			//close it
-			
-
-			//remove .open from last thing clicked
-			$("#" + open[containingSection[0]]).removeClass("open"); 
-			console.log("removing class from: #" + open[containingSection[0]]);
-
-
-			$("#" + open[containingSection[1]]).toggle(450); 
-			//if you clicked the same thing, don't do anything else
-			if (open[containingSection[1]] === targetHref) {
-				console.log("same thing");
-				$(event.target).removeClass("open");
-				open[containingSection] = [];
-				return;
-			}
-			open[containingSection] = [];
-
+		dealWithOpen(containingSection);
+		//if same thing clicked, remove .open
+		if (open[containingSection] === targetHref) {
+			open[containingSection] = "";
+			return;
 		}
 
-
+		$(event.target).addClass("open");
 		$("#" + targetHref).toggle(450);
-		open[containingSection] = [targetID, targetHref];
-		console.log(open[containingSection]);
-		console.log(open);
+		open[containingSection] = targetHref;
 
 	}); 
 
+	function dealWithOpen(containingID) {
+		//if something in this section's open already, close it and empty open
+		if (open[containingID].length) {  
+			//remove .open from last thing clicked
+			$("#" + containingID + " .open").removeClass("open"); 
+			$("#" + open[containingID]).toggle(450); 
 
+		}
+	}
 
 
 });
