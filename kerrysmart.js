@@ -11,7 +11,6 @@ $(document).ready(function() {
 		}, 600);
 	});
 
-
 	var currentSection = "";
 	//scroll to section when click on a section
 	$("section").click( function() {
@@ -22,60 +21,23 @@ $(document).ready(function() {
 		}, 600);
 	});
 
-/*
-	//toggle contents of inner nav links
-	var openDetail = ""; 
-	var openExpn = "";
-	$(".inner-nav li").click( function(event) {
-
-		//get id for clicked
-		var aimFull = event.target.href;
-		var aim = aimFull.split("#");
-		//check if link is external
-		if (aim.length > 1) {
-			//stop page reloading
-			event.preventDefault();
-			aim = aim[aim.length-1];
-			//console.log("aim: " + aim);
-			//console.log("openDetail: " + openDetail);
-			//do nothing if openng the same one
-			if (aim == openDetail) { //same thing clicked
-				$("#" + openDetail).toggle(450);
-				openDetail = "";
-				return;
-			} else { //differnt thing
-				//close open detail
-				$("#" + openDetail).toggle(450);
-				$("#" + aim).toggle(450);
-				//list as open (without #)
-				openDetail = aim;
-			}
-		} else { //external link
-			//close open detail
-			$("#" + openDetail).toggle(450);
-			openDetail = "";
-		}
-		
-		//stop event bubbling if it's inside a dropdown
-		if ($(event.target).hasClass("stop")) {
-			event.stopPropagation();
-		}
-
-	});*/
-
-	//rewrite toggle fxn to only collapse if click in the same section
-	//currentSection gives class of current section so there's that
-
+    //------------------------ toggle for .inner-nav  ------------------------
 	//get IDs of all sections
 	var sectionIDs = [];
 	$('section').each(function() {
 		sectionIDs.push(this.id);
 	});
-	//object for tracking what's open
+	//objects for tracking what's open, for .inner-nav and .drop
 	var open = {};
+	var openDrop = {};
 	for (var i = 0; i<sectionIDs.length; i++) {
 		open[sectionIDs[i]] = ""; 
+		openDrop[sectionIDs[i]] = []; 
 	}
+
+	console.log(open)
+	console.log(openDrop);
+
 
 	$(".inner-nav>li").click( function(event) {
 		//get sectionID
@@ -83,7 +45,7 @@ $(document).ready(function() {
 		
 		//if it's an external link, close open section things
 		if ($(event.target).attr("target") === "blank") {
-			dealWithOpen(containingSection);
+			dealWithOpen(containingSection, open);
 			open[containingSection] = "";
 			return;
 		}
@@ -95,7 +57,7 @@ $(document).ready(function() {
 		targetHref = targetHref.split("#");
 		targetHref = targetHref[targetHref.length-1];
 
-		dealWithOpen(containingSection);
+		dealWithOpen(containingSection, open);
 		//if same thing clicked, remove .open
 		if (open[containingSection] === targetHref) {
 			open[containingSection] = "";
@@ -108,16 +70,66 @@ $(document).ready(function() {
 
 	}); 
 
-	function dealWithOpen(containingID) {
+	function dealWithOpen(containingID, tracker) {
 		//if something in this section's open already, close it and empty open
-		if (open[containingID].length) {  
+		if (tracker[containingID].length) {  
 			//remove .open from last thing clicked
 			$("#" + containingID + " .open").removeClass("open"); 
-			$("#" + open[containingID]).toggle(450); 
+			$("#" + tracker[containingID]).toggle(450); 
 
 		}
 	}
 
+
+	// ------------------------------ toggle for .down
+	$("ul.down").click( function(event) {
+		event.stopPropagation();
+
+
+		//get sectionID
+		//XXX do i want a containing section or a containing dropdown?
+		//XXX will need something sectioned b/c can have multiple drops open in different sections
+		//XXX sectionKey: [dropdown, openExpn] ?  even though sectionKey isn't suuuuper crucial
+		var containingSection = $(event.target).closest("section").attr("id");
+		var containingUl = $(event.target).closest("ul").attr("id");
+		
+		//if it's an external link, open it and leave dropdown open
+		//XXX this works b/c dropdowns are currently all links or all expns
+		//XXX will need to fix this to deal with open things (as before) if this changes
+		if ($(event.target).attr("target") === "blank") {
+			openDrop[containingSection] = [];
+			return;
+		}
+		//stop page reloading
+		event.preventDefault();
+
+		//get ID of target
+		var targetHref = event.target.href;
+		targetHref = targetHref.split("#");
+		targetHref = targetHref[targetHref.length-1];
+
+
+
+		//if same thing clicked, remove .open and close thing
+		if (openDrop[containingSection][1] === targetHref) {
+			$(event.target).removeClass("open");
+			$("#" + targetHref).toggle(450);
+			openDrop[containingSection] = [];
+			console.log("same thing");
+			return;
+		}
+
+		//if something else open already
+		if (openDrop[containingSection].length>0) {
+			console.log("something was open already");
+			$("#" + openDrop[containingSection][1]).toggle(450);
+			$("#" + openDrop[containingSection][0] + ".open").removeClass("open");
+		}
+
+		$(event.target).addClass("open");
+		$("#" + targetHref).toggle(450);
+		openDrop[containingSection] = [containingUl, targetHref];
+	});
 
 });
 
