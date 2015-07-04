@@ -84,8 +84,6 @@ $(document).ready(function() {
 	// ------------------------------ toggle for .down
 	$("ul.down").click( function(event) {
 		event.stopPropagation();
-
-
 		//get sectionID
 		//XXX do i want a containing section or a containing dropdown?
 		//XXX will need something sectioned b/c can have multiple drops open in different sections
@@ -115,20 +113,29 @@ $(document).ready(function() {
 			$(event.target).removeClass("open");
 			$("#" + targetHref).toggle(450);
 			openDrop[containingSection] = [];
-			console.log("same thing");
 			return;
 		}
 
 		//if something else open already
 		if (openDrop[containingSection].length>0) {
-			console.log("something was open already");
 			$("#" + openDrop[containingSection][1]).toggle(450);
-			$("#" + openDrop[containingSection][0] + ".open").removeClass("open");
-		}
+			$("." + containingSection + ".down .open").removeClass("open");
+		} 
 
+		//open target
 		$(event.target).addClass("open");
 		$("#" + targetHref).toggle(450);
+
+		//scroll to target if nothing's open 
+		if (openDrop[containingSection].length<1) {
+			console.log("scrolling to: " + targetHref);
+			$("html,body").animate({
+				scrollTop: $("#" + targetHref).offset().top
+			}, 600);
+		}
+
 		openDrop[containingSection] = [containingUl, targetHref];
+
 	});
 
 });

@@ -28,11 +28,6 @@ p {
 	color: #D0DEF7;
 }
 
-body:after{
-    display:none;
-    content: url("img/knitting2.JPG") url("img/sketchbook.jpg") url("img/letters.jpg");
-}  /* preload hover/click images */
-
 img {
 	margin-bottom: 2em;
 }
@@ -122,7 +117,7 @@ ul.down li {
 	color: #7EADFF;
 }
 
-.down a:hover .glyphicon, .down a:hover .glyphicon {
+.down a:hover .glyphicon, .down a:hover .glyphicon, .down a.open .glyphicon {
 	color: #02595F;
 }
 
@@ -138,10 +133,11 @@ ul.down li {
 	padding: 0.2em;
 }
 
-li a.open, .detail a:hover, .detail a:active,  
-.expn a:hover, .expn a:active {
+li a.open, .detail a:hover,   
+.expn a:hover{
 	color: #02595F;
 	background-color: #D0DEF7;
+	
 }
 
 .expn img {
