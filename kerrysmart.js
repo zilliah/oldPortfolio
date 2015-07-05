@@ -45,7 +45,7 @@ $(document).ready(function() {
 		
 		//if it's an external link, close open section things
 		if ($(event.target).attr("target") === "blank") {
-			dealWithOpen(containingSection, open);
+			dealWithOpen(containingSection);
 			open[containingSection] = "";
 			return;
 		}
@@ -57,7 +57,7 @@ $(document).ready(function() {
 		targetHref = targetHref.split("#");
 		targetHref = targetHref[targetHref.length-1];
 
-		dealWithOpen(containingSection, open);
+		dealWithOpen(containingSection);
 		//if same thing clicked, remove .open
 		if (open[containingSection] === targetHref) {
 			open[containingSection] = "";
@@ -70,13 +70,19 @@ $(document).ready(function() {
 
 	}); 
 
-	function dealWithOpen(containingID, tracker) {
+	function dealWithOpen(containingID) {
 		//if something in this section's open already, close it and empty open
-		if (tracker[containingID].length) {  
+		if (open[containingID].length) {  
 			//remove .open from last thing clicked
 			$("#" + containingID + " .open").removeClass("open"); 
-			$("#" + tracker[containingID]).toggle(450); 
-
+			$("#" + open[containingID]).toggle(450); 
+		
+			//remove open .expns
+			if (openDrop[containingID].length) {
+				console.log("a drop was open");
+				$("#" + openDrop[containingID][1]).toggle(450);
+				openDrop[containingID] = [];
+			}
 		}
 	}
 
@@ -117,7 +123,7 @@ $(document).ready(function() {
 		}
 
 		//if something else open already
-		if (openDrop[containingSection].length>0) {
+		if (openDrop[containingSection].length) {
 			$("#" + openDrop[containingSection][1]).toggle(450);
 			$("." + containingSection + ".down .open").removeClass("open");
 		} 
