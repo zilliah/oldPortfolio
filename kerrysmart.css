@@ -67,6 +67,10 @@ section {
 	clear: both;
 }
 
+a:focus {
+	outline: none;
+}
+
 
 
 /* -------------- inside sections -------- */
@@ -76,19 +80,17 @@ section {
 }
 
 .nav-pills li a:hover, .nav-pills li a:focus,
- .nav-pills li a:active>a {
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover,
+ul li a.open, .detail a:hover, .expn a:hover {
 	background-color: #D0DEF7;
 	color: #02595F;
+	border: none;
 }
 
 .dropdown .dropdown-menu {
 	margin-left: 0;
 	background-color: #02595F;
 	font-size: 1.1em;
-}
-.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
-	background-color: #D0DEF7;
-	color: #02595F;
 }
 
 /* ---------------- details ------------------- */
@@ -117,7 +119,8 @@ ul.down li {
 	color: #7EADFF;
 }
 
-.down a:hover .glyphicon, .down a:hover .glyphicon, .down a.open .glyphicon {
+.down a:hover .glyphicon, .down a:hover .glyphicon, 
+.down a:focus .glyphicon, .down a.open .glyphicon {
 	color: #02595F;
 }
 
@@ -133,12 +136,6 @@ ul.down li {
 	padding: 0.2em;
 }
 
-li a.open, .detail a:hover,   
-.expn a:hover{
-	color: #02595F;
-	background-color: #D0DEF7;
-	
-}
 
 .expn img {
 	border-radius: 0.5em;
@@ -158,9 +155,19 @@ li a.open, .detail a:hover,
 	box-shadow: 0px 0px 30px -4px rgba(126,173,255,1);
 }
 
-.knit img {
-
+/* ----- bah ----- */
+#email a {
+	/* padding: 0.5em; */	
 }
+
+
+@media all and (max-width: 1011px) {
+    .glyphicon-menu-left {
+        display: none;
+    }
+}
+
+
 
 /* urg worry about pictures later mmmk
 #dev:hover, #dev:active {

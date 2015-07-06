@@ -15,7 +15,6 @@ $(document).ready(function() {
 	//scroll to section when click on a section
 	$("section").click( function() {
 		currentSection = this.id;
-		//console.log("scrolling to: " + currentSection);
 		$("html,body").animate({
 			scrollTop: $("#" + currentSection).offset().top
 		}, 600);
@@ -34,10 +33,6 @@ $(document).ready(function() {
 		open[sectionIDs[i]] = ""; 
 		openDrop[sectionIDs[i]] = []; 
 	}
-
-	console.log(open)
-	console.log(openDrop);
-
 
 	$(".inner-nav>li").click( function(event) {
 		//get sectionID
@@ -79,7 +74,6 @@ $(document).ready(function() {
 		
 			//remove open .expns
 			if (openDrop[containingID].length) {
-				console.log("a drop was open");
 				$("#" + openDrop[containingID][1]).toggle(450);
 				openDrop[containingID] = [];
 			}
@@ -91,9 +85,7 @@ $(document).ready(function() {
 	$("ul.down").click( function(event) {
 		event.stopPropagation();
 		//get sectionID
-		//XXX do i want a containing section or a containing dropdown?
-		//XXX will need something sectioned b/c can have multiple drops open in different sections
-		//XXX sectionKey: [dropdown, openExpn] ?  even though sectionKey isn't suuuuper crucial
+		//sectionKey: [dropdown, openExpn]
 		var containingSection = $(event.target).closest("section").attr("id");
 		var containingUl = $(event.target).closest("ul").attr("id");
 		
@@ -134,7 +126,6 @@ $(document).ready(function() {
 
 		//scroll to target if nothing's open 
 		if (openDrop[containingSection].length<1) {
-			console.log("scrolling to: " + targetHref);
 			$("html,body").animate({
 				scrollTop: $("#" + targetHref).offset().top
 			}, 600);
