@@ -45,9 +45,9 @@ nav .glyphicon {
 
 h1 {
 	color: #D0DEF7;
-	font-size: 3em;
 	padding-top: 0.5em;
 	padding-left: 0.7em;
+	padding-right: 0.7em;
 }
 
 h3 a {
@@ -64,6 +64,7 @@ section {
 .category ul {
 	color: #D0DEF7;
 	margin-left: 2.1em;
+	margin-right: 2.1em;
 	clear: both;
 }
 
@@ -155,19 +156,66 @@ ul.down li {
 	box-shadow: 0px 0px 30px -4px rgba(126,173,255,1);
 }
 
-/* ----- bah ----- */
-#email a {
-	/* padding: 0.5em; */	
+/* ------------ detailed/hacks ---------- */
+#email {
+	margin-left: 2.1em;
 }
 
+#fed {
+	margin-top: 0;
+}
 
-@media all and (max-width: 1011px) {
+.corner {
+	margin-bottom: 1.5em;
+}
+
+.narrow-title {
+	display: none;
+}
+.awk-narrow-title {
+		display: none;
+}
+
+/* --------- @media ------------ */
+@media screen and (max-width: 1139px) {
     .glyphicon-menu-left {
         display: none;
     }
 }
 
+@media screen and (max-width: 554px) {
+	h1 {
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0;
+		padding-right: 0;
+	}
 
+	.nav.inner-nav {
+		margin: auto 0;
+	}
+
+}
+
+@media screen and (min-width: 992px) and (max-width: 1036px) {
+	.awk-narrow-title {
+		display: inline;
+	}
+	.awk-wide-title {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 388px) {
+	.wide-title {
+		display: none;
+	}
+
+	.narrow-title {
+		display: inline;
+	}
+
+}
 
 /* urg worry about pictures later mmmk
 #dev:hover, #dev:active {
