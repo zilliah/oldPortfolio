@@ -150,10 +150,23 @@ ul.down li {
 	border: 0.1em solid #7EADFF;
 }
 
-.expn img:hover {
+.expn img:hover, .buy:hover {
 	-webkit-box-shadow: 0px 0px 30px -4px rgba(126,173,255,1);
 	-moz-box-shadow: 0px 0px 29px -4px rgba(126,173,255,1);
 	box-shadow: 0px 0px 30px -4px rgba(126,173,255,1);
+}
+
+.knit a.buy {
+	font-size: 1.1em;
+	border: none;
+	padding: 10px 15px;
+	color: #7EADFF;
+}
+
+.knit a.buy:hover, .knit a.buy:active,
+.knit a.buy:focus {
+	background-color: #D0DEF7;
+	color: #02595F;
 }
 
 /* ------------ detailed/hacks ---------- */
@@ -177,27 +190,13 @@ ul.down li {
 }
 
 /* --------- @media ------------ */
-@media screen and (max-width: 1139px) {
+@media screen and (max-width: 1154px) {
     .glyphicon-menu-left {
         display: none;
     }
 }
 
-@media screen and (max-width: 554px) {
-	h1 {
-		margin-left: 0;
-		margin-right: 0;
-		padding-left: 0;
-		padding-right: 0;
-	}
-
-	.nav.inner-nav {
-		margin: auto 0;
-	}
-
-}
-
-@media screen and (min-width: 992px) and (max-width: 1036px) {
+@media screen and (min-width: 992px) and (max-width: 1051px) {
 	.awk-narrow-title {
 		display: inline;
 	}
@@ -206,59 +205,50 @@ ul.down li {
 	}
 }
 
+
+@media screen and (max-width: 569px) {
+	h1 {
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.nav.inner-nav {
+		margin: auto 0;
+	}
+	#email {
+		margin-left: 0;
+	}
+
+	#name {
+		padding-left: 7px;
+		padding-right: 7px;
+	}
+}
+
+@media screen and (max-width: 510px) and (min-width: 448px)  {
+	.inner-nav>li>a {
+		padding: 5px 7px 5px 7px;
+	}
+}
+
+@media screen and (max-width: 462px) {
+	.inner-nav>li {
+		float: none;
+	}
+}
+
 @media screen and (max-width: 388px) {
 	.wide-title {
 		display: none;
 	}
-
 	.narrow-title {
 		display: inline;
 	}
-
 }
 
-/* urg worry about pictures later mmmk
-#dev:hover, #dev:active {
-	background-image: url("");
+@media screen and (max-width: 324px) {
+	h1 {
+		font-size: 30px;
+	}
 }
-
-#dev {
-	background-image: url("");
-}
-
-
-
-#knitting {
-	/* -----this bit doesn't work, need to do gradient tutorials
-	background: #02595F;
-	background-image: url("img/knitting2BW.JPG"); /* fallback 
-	background-image: url("img/knitting2BW.JPG"), -webkit-gradient(linear, left top, left bottom, from(#02595F), to(rgba(2,89,95,0))); /* Saf4+, Chrome 
-	background-image: url("img/knitting2BW.JPG"), -webkit-linear-gradient(left, #02595F, rgba(2,89,95,0)); /* Chrome 10+, Saf5.1+ 
-	background-image: url("img/knitting2BW.JPG"),    -moz-linear-gradient(right, #02595F, rgba(2,89,95,0)); /* FF3.6+ 
-	background-image: url("img/knitting2BW.JPG"),      -o-linear-gradient(right, #02595F, rgba(2,89,95,0)); /* Opera 11.10+ 
-	background-image: url("img/knitting2BW.JPG"),         linear-gradient(to right, #02595F, rgba(2,89,95,0)); /* W3C 
-	
-	background-image: url("img/knittingBW.JPG");
-
-}
-#knitting:hover, #knitting:active {
-	background-image: url("img/knitting.JPG");
-}
-
-#sketchbook {
-	background-image: url("img/sketchbookCRBW.jpg");
-}
-
-#sketchbook:hover, #sketchbook:active {
-	background-image: url("img/sketchbookCR.jpg");
-}
-
-#contact {
-	background-image: url("img/lettersBW.jpg");
-}
-#contact:hover, #contact:active {
-	background-image: url("img/letters.jpg");
-}
-
-/*
-
