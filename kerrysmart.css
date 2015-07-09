@@ -288,7 +288,7 @@ ul.down li {
 	}
 }
 
-@media screen and (max-width: 388px) {
+@media screen and (max-width: 403px) {
 	.wide-title {
 		display: none;
 	}
