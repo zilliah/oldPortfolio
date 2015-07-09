@@ -9,7 +9,7 @@
     <link href="kerrysmart.css" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="kerrysmart.js"></script>
+    <script type="text/javascript" src="kerrysmart.min.js"></script>
 </head>
 
 
@@ -53,10 +53,10 @@
 
 				</div>
 						
-				<div class="col-md-6">
+				<div class="col-md-6 right-col">
 					<div class="expn fed-proj-expn" id="here-is-pretty">
 						<h3><a href="http://hereispretty.com" target="blank">Here is Pretty</a></h3>
-						<p>Here is Pretty is a webapp which lets you find and record pretty places.  Users can use it to record and organize nice places to walk, good coffee shops, interesting trees, or anything else.  It's designed to be primarily used on-site through mobile devices, but you can add places from a distance as well.  I'm designing and implementing the front end and <a href="https://github.com/jlapointe">a friend</a> is managing the back end.  This project is currently in development, but you can follow our progress <a href="https://github.com/zilliah/hereispretty">on Github</a>.</p>
+						<p>Here is Pretty is a webapp which lets you find and record pretty places.  Users can use it to record and organize nice places to walk, good coffee shops, interesting trees, or anything else.  It's designed to be primarily used on-site through mobile devices, but you can add places from a distance as well.  I'm designing and implementing the front end and <a href="https://github.com/jlapointe">a friend</a> is managing the back end.  This project is currently in development, but you can follow our progress <a href="https://github.com/zilliah/hereispretty">on Github.</a></p>
 						<div class="row">
 							<div class="col-xs-10">
 								<a href="https://github.com/zilliah/hereispretty" class="img-link" title="Here is Pretty" target="blank"><img src="img/HiP-screen.png" alt="here is pretty screenshot" class="img-responsive"></a>
@@ -73,17 +73,25 @@
 						</div>
 					</div>
 					<!-- <div class="fed-proj-expn" id="bagelly">bagelly</div> -->
-					<ul class="detail fed" id="fed-skills">
-						<li>HTML/CSS</li>
-						<li>Javascript/jQuery</li>
-						<li>Bootstrap</li>
-						<li>Photoshop/Krita/GIMP</li>
-						<li>Inkscape</li>
-						<li>Git</li>
-						<li>Python (very basic)</li>
-						<!-- <li>D3</li> -->
-						<!-- <li>React</li> -->
-					</ul>
+					<div class="expn fed" id="fed-skills">
+						<h3>Skills</h3>
+						<div class="col-xs-4 col-sm-3">
+							<img src="img/code3.jpg" alt="" class="img-responsive deco">
+						</div>
+						<div class="col-xs-8 col-sm-9 full-tiny">
+							<ul>
+								<li>HTML/CSS</li>
+								<li>Javascript/jQuery</li>
+								<li>Bootstrap</li>
+								<li>Photoshop/Krita/GIMP</li>
+								<li>Inkscape</li>
+								<li>Git</li>
+								<li>Python (very basic)</li>
+								<!-- <li>D3</li> -->
+								<!-- <li>React</li> -->
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -117,7 +125,7 @@
 					</ul> -->
 				</div>
 
-				<div class="col-md-6">
+				<div class="col-md-6 right-col">
 					<div class="expn vis" id="flooded">
 						<h3><a href="https://uwaterloo.ca/knowledge-integration-exhibition/ki-x-2014/flooded" target="blank">Flooded! museum exhibit</a></h3>
 						<p>The "Flooded!" museum exhibit explored floods and their impact and was part of <a href="https://uwaterloo.ca/knowledge-integration-exhibition/ki-x-2014">KIX 2014</a>.  I worked in a group of six over eight months to design and build this exhibition.  I managed the visual design of the exhibit.  More details about this project coming soon!</p>
@@ -132,11 +140,11 @@
 					<div class="expn vis" id="knit-onoff">
 						<h3><a href="knit-onoff">Knit On/Off</a></h3>
 						<div class="row">
-							<div class="col-xs-6">
-								<a href="#" class="img-link" ><img src="img/pt2.jpg" class="img-responsive" alt="knit on/off"></a>
-							</div>
-							<div class="col-xs-6">
+							<div class="col-xs-8 full-tiny">
 								<p>Knit On/Off is my thesis project.  It is currently in progress, and will be finished by the end of 2015.  I'm making a mechanical knitting machine which will simultaneously knit and un-knit a piece of fabric.  This work will be an examination of the intersection of art, craft, and technology.  More details will be added as the project progresses.</p>
+							</div>
+							<div class="col-xs-4">
+								<img src="img/pt2.jpg" class="img-responsive deco" alt="knit on/off">
 							</div>
 						</div>
 					</div>
@@ -161,68 +169,88 @@
 								<!-- <li><a href="" >Diamonds Shawl</a></li> -->
 							</ul>
 						</li>
-						<li><a href="#knit-teach">teaching</a></li>
+						<li><a href="#knit-teach">lessons</a></li>
 						<li><a href="#knit-commis">commission</a></li>
 						<li><a href="http://www.ravelry.com/people/zilliah" target="blank">ravelry</a></li>
 					</ul>
 				</div>
+				
+				<div class="col-md-6 right-col">
+					<div class="expn knit pattern" id="dryad">
+						<h3><a href="http://www.ravelry.com/patterns/library/dryad-armwarmers" title="Dryad Armwarmers">Dryad Armwarmers Pattern</a></h3>
 
-				<div class="col-md-6">
-						<div class="expn knit pattern" id="dryad">
-							<h3><a href="http://www.ravelry.com/patterns/library/dryad-armwarmers" title="Dryad Armwarmers">Dryad Armwarmers</a></h3>
+						<div class="row">
+							<div class="col-xs-5">
+								<a href="http://www.ravelry.com/patterns/library/dryad-armwarmers" class="img-link"  title="Dryad Armwarmers" target="blank"><img src="img/dryad.JPG" alt="dryad armwarmers pattern" class="img-responsive"></a>
+							</div>
+							<div class="col-xs-7">
+								<p>These armwarmers have a lace leaf pattern running up each side and end in decorative points.  Great for festivals or wood elf costumes, and look best in leafy colours.  Charted and written directions are included, and it uses approximately 100m DK weight yarn.</p><br>
+								<a href="http://www.ravelry.com/patterns/library/dryad-armwarmers" title="Dryad Armwarmers" class="buy" target="blank">Buy on Ravelry</a>
+							</div>
+						</div>
+					</div>
 
-							<div class="row">
-								<div class="col-xs-6">
-									<a href="http://www.ravelry.com/patterns/library/dryad-armwarmers" class="img-link"  title="Dryad Armwarmers" target="blank"><img src="img/dryad.JPG" alt="dryad armwarmers pattern" class="img-responsive"></a>
-								</div>
-								<div class="col-xs-6">
-									<p>These armwarmers have a lace leaf pattern running up each side and end in decorative points.  Great for festivals or wood elf costumes, and look best in leafy colours.  Charted and written directions are included, and it uses approximately 100m DK weight yarn.</p>
-									<a href="http://www.ravelry.com/patterns/library/dryad-armwarmers" title="Dryad Armwarmers" class="buy" target="blank">Buy on Ravelry</a>
-								</div>
+					<div class="expn knit pattern" id="very-large">
+						<h3><a href="http://www.ravelry.com/patterns/library/very-large-red-hat" title="Very Large Red Hat">Very Large Red Hat Pattern</a></h3>
+						<div class="row">
+							<div class="col-xs-5">
+								<a href="http://www.ravelry.com/patterns/library/very-large-red-hat" class="img-link"  title="Very Large Red Hat" target="blank"><img src="img/large-red2.JPG" alt="very large red hat pattern" class="img-responsive"></a>
+							</div>
+							<div class="col-xs-7">
+								<p>This is an extremely large hat!  It's intended for people with massive heads or massive hair - anyone else may be swallowed whole.  It has as a small cable detail, so if you want a simple introduction to cables this is a good pattern for you.  Uses approximately 180m bulky weight yarn.</p><br>
+								<a href="http://www.ravelry.com/patterns/library/very-large-red-hat" class="buy"  title="Very Large Red Hat" target="blank">Buy on Ravelry</a>
 							</div>
 						</div>
-						<div class="expn knit pattern" id="very-large">
-							<h3><a href="http://www.ravelry.com/patterns/library/very-large-red-hat" title="Very Large Red Hat">Very Large Red Hat</a></h3>
-							<div class="row">
-								<div class="col-xs-6">
-									<a href="http://www.ravelry.com/patterns/library/very-large-red-hat" class="img-link"  title="Very Large Red Hat" target="blank"><img src="img/large-red.JPG" alt="very large red hat pattern" class="img-responsive"></a>
-								</div>
-								<div class="col-xs-6">
-									<p>This is an extremely large hat!  It's intended for people with massive heads or massive hair - anyone else may be swallowed whole.  It has as a small cable detail, so if you want a simple introduction to cables this is a good pattern for you.  Uses approximately 180m bulky weight yarn.</p>
-									<a href="http://www.ravelry.com/patterns/library/very-large-red-hat" class="buy"  title="Very Large Red Hat" target="blank">Buy on Ravelry</a>
-								</div>
+					</div>
+
+					<div class="expn knit pattern" id="eyelet">
+						<h3><a href="http://www.ravelry.com/patterns/library/eyelet-ribbed-dread-tam"  title="Eyelet ribbed dread tam">Eyelet Dread Tam Pattern</a></h3>
+						<div class="row">
+							<div class="col-xs-5">
+								<a href="http://www.ravelry.com/patterns/library/eyelet-ribbed-dread-tam" class="img-link"  title="Eyelet ribbed dread tam" target="blank"><img src="img/eyelet.JPG" alt="eyelet dread tam pattern" class="img-responsive"></a>
+							</div>
+							<div class="col-xs-7">
+								<p>A large hat, perfect for dreadlocks, large heads, or when you just want a super slouchy hat. It has a simple ribbing and eyelet pattern, making it a good introductory project for working with stitch patterns.  It's reversible and looks great in self-striping yarns.  Uses approximately 180m aran/worsted weight yarn.</p><br>
+								<a href="http://www.ravelry.com/patterns/library/eyelet-ribbed-dread-tam" class="buy"  title="Eyelet ribbed dread tam" target="blank">Buy on Ravelry</a>
 							</div>
 						</div>
-						<div class="expn knit pattern" id="eyelet">
-							<h3><a href="http://www.ravelry.com/patterns/library/eyelet-ribbed-dread-tam"  title="Eyelet ribbed dread tam">Eyelet Dread Tam</a></h3>
-							<div class="row">
-								<div class="col-xs-6">
-									<a href="http://www.ravelry.com/patterns/library/eyelet-ribbed-dread-tam" class="img-link"  title="Eyelet ribbed dread tam" target="blank"><img src="img/eyelet.JPG" alt="eyelet dread tam pattern" class="img-responsive"></a>
-								</div>
-								<div class="col-xs-6">
-									<p>A large hat, perfect for dreadlocks, large heads, or when you just want a super slouchy hat. It has a simple ribbing and eyelet pattern, making it a good introductory project for working with stitch patterns.  It's reversible and looks great in self-striping yarns.  Uses approximately 180m aran/worsted weight yarn.</p>
-									<a href="http://www.ravelry.com/patterns/library/eyelet-ribbed-dread-tam" class="buy"  title="Eyelet ribbed dread tam" target="blank">Buy on Ravelry</a>
-								</div>
+					</div>
+
+					<div class="expn knit" id="knit-teach">
+						<div class="col-md-12">
+							<h3>Lessons</h3>
+							<p>Want to learn to knit?  I'm here to help!  I'm available for group or private lessons, and regularly have beginner knitting classes at <a href="http://shallweknit.ca/" title="Shall We Knit?" target="blank">Shall We Knit?</a> in Waterloo, ON.  <a href="#contact">Contact me</a> for more details, or check Shall We Knit's <a href="http://shallweknit.ca/the-store.php" target="blank">class list</a> to register for an upcoming class.  I'm happy to help you work through projects and I can teach these skills:</p>
+							<div class="col-xs-4">
+								<img src="img/stitch.jpg" alt="stitch" class="img-responsive deco">
+							</div>
+							<div class="col-xs-8 full-tiny">
+								<ul>
+									<li>the knit and purl stitches (english and continental style)</li>
+									<li>casting on and binding off</li>
+									<li>increasing and decreasing</li>
+									<li>working in the round</li>
+									<li>fixing mistakes</li>
+									<li>what is gauge, why it's important, how to get it</li>
+									<li>choosing and reading a pattern</li>
+									<li>cables</li>
+									<li>lace</li>
+									<li>knitting with beads</li>
+									<li>interested in something else?  <a href="#contact">just ask!</a></li>
+								</ul>
 							</div>
 						</div>
-						<div class="detail knit" id="knit-teach">
-							<p>I teach beginner knitting at <a href="http://shallweknit.ca/" title="Shall We Knit?" target="blank">Shall We Knit?</a> in Waterloo, ON.  I am available for private or group lessons, which can be booked by <a href="kerrysmart.ca/index.html#contact">contacting me</a> or through Shall We Knit?  I'm happy to help you work through projects and I can teach these skills:</p>
-							<ul>
-								<li>the knit and purl stitches (english and continental style)</li>
-								<li>casting on and binding off</li>
-								<li>fixing mistakes</li>
-								<li>what is gauge, why it's important, how to get it</li>
-								<li>increases and decreases</li>
-								<li>choosing and reading a pattern</li>
-								<li>various methods for working in the round</li>
-								<li>cables</li>
-								<li>lace</li>
-								<li>knitting with beads</li>
-								<li>interested in something else?  <a href="#contact">just ask!</a></li>
-							</ul>
+					</div>
+
+
+					<div class="expn knit" id="knit-commis">
+						<h3>Commission</h3>
+						<div class="col-xs-8 full-tiny">
+							<p>Have you ever wanted an awesome knitted thing but didn't have the skill/time/energy to make it yourself?  I can make it for you!  I can work from a pattern or design something just for you.  <a href="#contact">Contact me</a> to start discussing your project.</p>
 						</div>
-						<p class="detail knit" id="knit-commis">I am available to knit on commission; I can work from a pattern or design something for you.  I charge an hourly fee plus materials.  <a href="#contact">Contact me</a> to get an estimation for your project.</p>
-				</div>
+						<div class="col-xs-4">
+							<img src="img/shawl.JPG" alt="shawl" class="img-responsive deco">
+						</div>
+					</div>
 			</div>
 		</section>
 	</div>
@@ -242,7 +270,7 @@
 								<li><a href="https://www.flickr.com/photos/zilliah/sets/72157622670033469" target="blank"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> yarn bombing</a></li>
 							</ul>
 						</li>
-						<li><a href="https://soundcloud.com/zilliah-1" target="blank">ukulele songs</a></li>
+						<!-- <li><a href="https://soundcloud.com/zilliah-1" target="blank">ukulele songs</a></li> -->
 						<li><a href="#tutorial">craft tutorials <span class="caret"></span></a>
 							<ul class="other down detail" id="tutorial">
 								<li><a href="https://www.flickr.com/photos/zilliah/sets/72157624542941597" target="blank"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> how to re-make yarn</a></li>

@@ -26,6 +26,8 @@ a, a:hover, a:active, a:visited, a:link {
 
 p {
 	color: #D0DEF7;
+	padding-left: 15px;
+	margin-top: 10px;
 }
 
 img {
@@ -50,10 +52,12 @@ h1 {
 	padding-right: 0.7em;
 }
 
-h3 a {
+h3 {
 	color: #7EADFF;
-	
+	padding-left: 15px;
 }
+
+
 
 section {
 	background-color: #02595F;
@@ -72,7 +76,9 @@ a:focus {
 	outline: none;
 }
 
-
+.right-col {
+	padding-right: 30px;
+}
 
 /* -------------- inside sections -------- */
 .nav-pills li a {
@@ -96,12 +102,20 @@ ul li a.open, .detail a:hover, .expn a:hover {
 
 /* ---------------- details ------------------- */
 
+.full-tiny>p {
+	padding-left: 0;
+}
+
 .detail, .expn { 
 	display: none;
 }
 
 .expn h3 {
 	margin-top: 2.2em;
+}
+
+.expn h3>a {
+	margin-left: -0.4em;
 }
 
 ul.down {
@@ -137,6 +151,10 @@ ul.down li {
 	padding: 0.2em;
 }
 
+.expn a {
+	padding-left: 0.4em;
+	padding-right: 0.4em;
+}
 
 .expn img {
 	border-radius: 0.5em;
@@ -150,7 +168,7 @@ ul.down li {
 	border: 0.1em solid #7EADFF;
 }
 
-.expn img:hover, .buy:hover {
+.expn a>img:hover, .buy:hover {
 	-webkit-box-shadow: 0px 0px 30px -4px rgba(126,173,255,1);
 	-moz-box-shadow: 0px 0px 29px -4px rgba(126,173,255,1);
 	box-shadow: 0px 0px 30px -4px rgba(126,173,255,1);
@@ -160,14 +178,11 @@ ul.down li {
 	font-size: 1.1em;
 	border: none;
 	padding: 10px 15px;
-	color: #7EADFF;
-}
-
-.knit a.buy:hover, .knit a.buy:active,
-.knit a.buy:focus {
+	margin-left: 15px;
 	background-color: #D0DEF7;
 	color: #02595F;
 }
+
 
 /* ------------ detailed/hacks ---------- */
 #email {
@@ -189,6 +204,14 @@ ul.down li {
 		display: none;
 }
 
+#knit-teach ul, #fed-skills ul {
+	margin: auto 0 10px 0;
+	padding-left: 15px;
+}
+
+#knit-teach img {
+	margin-top: 7px;
+}
 /* --------- @media ------------ */
 @media screen and (max-width: 1154px) {
     .glyphicon-menu-left {
@@ -205,6 +228,15 @@ ul.down li {
 	}
 }
 
+@media screen and (max-width: 992px) {
+	.right-col {
+		padding-left: 41px;
+	}
+
+	.expn h3 {
+		margin-top: 0.7em;
+	}
+}
 
 @media screen and (max-width: 569px) {
 	h1 {
@@ -224,6 +256,15 @@ ul.down li {
 		padding-left: 7px;
 		padding-right: 7px;
 	}
+
+	.right-col {
+		padding-left: 0;
+		padding-right: 15px;
+	}
+
+	#knit-teach>.col-md-12 {
+		padding-left: 0;
+	}
 }
 
 @media screen and (max-width: 510px) and (min-width: 448px)  {
@@ -235,6 +276,15 @@ ul.down li {
 @media screen and (max-width: 462px) {
 	.inner-nav>li {
 		float: none;
+	}
+
+	/* remove decorative photos and resize text */
+	.deco {
+		display: none;
+
+	}
+	.full-tiny {
+		width: 100%;
 	}
 }
 
