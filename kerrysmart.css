@@ -219,11 +219,8 @@ ul.down li {
     }
 }
 
-@media screen and (min-width: 992px) and (max-width: 1051px) {
-	.awk-narrow-title {
-		display: inline;
-	}
-	.awk-wide-title {
+@media screen and (max-width: 1060px) {
+	.hide-title {
 		display: none;
 	}
 }
@@ -297,8 +294,12 @@ ul.down li {
 	}
 }
 
-@media screen and (max-width: 324px) {
+@media screen and (max-width: 350px) {
 	h1 {
 		font-size: 30px;
+	}
+
+	.small-buy {
+		display: none;
 	}
 }

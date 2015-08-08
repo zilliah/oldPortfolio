@@ -1,9 +1,12 @@
 $(document).ready(function() {
 
+    
+
 	//scrolling from corner nav
-	$(".corner").click( function() {
+	$(".corner").click( function(event) {
 		event.preventDefault();
 		var sectionLink = event.target.href;
+        console.log(sectionLink);
 		var sectionName = sectionLink.split("#");
 		sectionName = sectionName[1];
 		$("html,body").animate({
