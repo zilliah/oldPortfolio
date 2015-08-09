@@ -189,6 +189,11 @@ ul.down li {
 	margin-left: 2.1em;
 }
 
+#email a:focus {
+	background-color: #D0DEF7;
+	color: #02595F;
+}
+
 #fed {
 	margin-top: 0;
 }
@@ -199,9 +204,6 @@ ul.down li {
 
 .narrow-title {
 	display: none;
-}
-.awk-narrow-title {
-		display: none;
 }
 
 #knit-teach ul, #fed-skills ul {

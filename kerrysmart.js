@@ -1,12 +1,9 @@
 $(document).ready(function() {
 
-    
-
 	//scrolling from corner nav
-	$(".corner").click( function(event) {
+	$(".corner a").click( function(event) {
 		event.preventDefault();
-		var sectionLink = event.target.href;
-        console.log(sectionLink);
+		var sectionLink = this.href;
 		var sectionName = sectionLink.split("#");
 		sectionName = sectionName[1];
 		$("html,body").animate({
@@ -37,12 +34,12 @@ $(document).ready(function() {
 		openDrop[sectionIDs[i]] = []; 
 	}
 
-	$(".inner-nav>li").click( function(event) {
+	$(".inner-nav>li>a").click( function(event) {
 		//get sectionID
 		var containingSection = $(event.target).closest("section").attr("id");
 		
 		//if it's an external link, close open section things
-		if ($(event.target).attr("target") === "blank") {
+		if ($(this).attr("target") === "blank") {
 			dealWithOpen(containingSection);
 			open[containingSection] = "";
 			return;
@@ -51,7 +48,7 @@ $(document).ready(function() {
 		event.preventDefault();
 
 		//get ID of target
-		var targetHref = event.target.href;
+		var targetHref = this.href;
 		targetHref = targetHref.split("#");
 		targetHref = targetHref[targetHref.length-1];
 
@@ -62,7 +59,7 @@ $(document).ready(function() {
 			return;
 		}
 
-		$(event.target).addClass("open");
+		$(this).addClass("open");
 		$("#" + targetHref).toggle(450);
 		open[containingSection] = targetHref;
 
@@ -85,25 +82,27 @@ $(document).ready(function() {
 
 
 	// ------------------------------ toggle for .down
-	$("ul.down").click( function(event) {
+	$("ul.down a").click( function(event) {
 		event.stopPropagation();
 		//get sectionID
 		//sectionKey: [dropdown, openExpn]
-		var containingSection = $(event.target).closest("section").attr("id");
-		var containingUl = $(event.target).closest("ul").attr("id");
+		var containingSection = $(this).closest("section").attr("id");
+		var containingUl = $(this).closest("ul").attr("id");
 		
 		//if it's an external link, open it and leave dropdown open
 		//XXX this works b/c dropdowns are currently all links or all expns
-		//XXX will need to fix this to deal with open things (as before) if this changes
-		if ($(event.target).attr("target") === "blank") {
+		//XXX will need to fix this to deal with open things (as before) if have mixed lists
+		if ($(this).attr("target") === "blank" || this.href.indexOf("mailto") > -1) {
 			openDrop[containingSection] = [];
 			return;
 		}
+
+
 		//stop page reloading
 		event.preventDefault();
 
 		//get ID of target
-		var targetHref = event.target.href;
+		var targetHref = this.href;
 		targetHref = targetHref.split("#");
 		targetHref = targetHref[targetHref.length-1];
 
@@ -111,7 +110,7 @@ $(document).ready(function() {
 
 		//if same thing clicked, remove .open and close thing
 		if (openDrop[containingSection][1] === targetHref) {
-			$(event.target).removeClass("open");
+			$(this).removeClass("open");
 			$("#" + targetHref).toggle(450);
 			openDrop[containingSection] = [];
 			return;
@@ -124,7 +123,7 @@ $(document).ready(function() {
 		} 
 
 		//open target
-		$(event.target).addClass("open");
+		$(this).addClass("open");
 		$("#" + targetHref).toggle(450);
 
 		//scroll to target if nothing's open 
@@ -133,10 +132,8 @@ $(document).ready(function() {
 				scrollTop: $("#" + targetHref).offset().top
 			}, 600);
 		}
-
 		openDrop[containingSection] = [containingUl, targetHref];
-
 	});
-
+	
 });
 
